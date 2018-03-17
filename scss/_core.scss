@@ -1,0 +1,45 @@
+.header {
+  height: 75vh;
+  width: 100%;
+  background-image: url("/images/city2.jpeg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.header_content {
+  color: $color_font;
+  padding-top: 3rem;
+}
+
+.header_content--city {
+  font-size: 3rem ;
+}
+.icon_weather {
+  width: 160px;
+  height: 100px;
+}
+.header_content--temp {
+  font-size: 8.5rem;
+  display: inline-block;
+}
+.header_content--date {
+  font-size: 2rem;
+  text-align: right;
+}
+
+.waves {
+  width: 100vw;
+  position: relative;
+  top: -50px;
+}
+
+//___________________________________________________________________________________________________
+.day_content {
+  flex-basis: 14%;
+}
+.day {
+  display: block;
+}
+.temp {
+  display: block;
+}

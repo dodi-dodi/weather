@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,700,700i&subset=latin-ext');
+
+/****** NORMALIZATION ******/
+
+:root {
+  font-size: $root_font_size;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}

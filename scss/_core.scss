@@ -33,14 +33,12 @@
 }
 
 //___________________________________________________________________________________________________
-.day_content {
-  flex-basis: 14%;
-}
+
 
 .day {
   display: block;
 }
 
-.temp {
-  display: block;
+.temp-night {
+  color: $color_blue;
 }

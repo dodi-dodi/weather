@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="weather app">
   <title>Weather app</title>
+  <link rel="stylesheet" href="css/accu-icons.css">
   <link rel="stylesheet" href="css/framework.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -15,75 +16,28 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-m-6">
-          <p class="header_content header_content--city">Warszawa, Polska</p>
+          <p class="header_content header_content--city" id="current-city"></p>
 
-         <div class="temp_content">
-           <img class="header_icon" src="images/sun_icon.png" alt="">
-           <p class="header_content header_content--temp">25 C</p>
-         </div>
+          <div class="temp_content">
+            <span class="sprite header_icon" id="icon-today"></span>
+            <p class="header_content header_content--temp" id="temp-today"></p>
+          </div>
 
         </div>
         <div class="col-xs-12 col-m-6">
-          <p class="header_content header_content--date">Saturday, 7:00 PM</p>
+          <p class="header_content header_content--date" id="current-date"></p>
         </div>
       </div>
     </div>
   </div>
-    <img class="waves" src="images/waves.v2.svg" alt="">
+  <img class="waves" src="images/waves.v2.svg" alt="">
 </header>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-m-2 text-center">
-      <span class="day">Tuesday</span>
-      <img class="icon-weather" src="images/sun_icon.png" alt="">
-      <div>
-      <span  class="temp-day" id="temp-day-tuesday">31C</span>
-      <span class="temp-night" id="temp-night-tuesday">17C</span>
-      </div>
-    </div>
-    <div class="col-xs-6 col-m-2 text-center">
-      <span class="day">Wednesday</span>
-      <img class="icon-weather" src="images/sun_icon.png" alt="">
-      <div>
-        <span  class="temp-day" id="temp-day-wednesday">31C</span>
-        <span class="temp-night" id="temp-night-wednesday">17C</span>
-      </div>
-    </div>
-    <div class="col-xs-6 col-m-2 text-center">
-      <span class="day">Thursday</span>
-      <img class="icon-weather" src="images/sun_icon.png" alt="">
-      <div>
-        <span  class="temp-day" id="temp-day-thursday">31C</span>
-        <span class="temp-night" id="temp-night-thursday">17C</span>
-      </div>
-    </div>
-    <div class="col-xs-6 col-m-2 text-center">
-      <span class="day">Friday</span>
-      <img src="images/sun_icon.png" alt="">
-      <div>
-        <span  class="temp-day" id="temp-day-friday">31C</span>
-        <span class="temp-night" id="temp-night-friday">17C</span>
-      </div>
-    </div>
-    <div class="col-xs-6 col-m-2 text-center">
-      <span class="day">Saturday</span>
-      <img class="icon-weather" src="images/sun_icon.png" alt="">
-      <div>
-        <span  class="temp-day" id="temp-day-saturday">31C</span>
-        <span class="temp-night" id="temp-night-saturday">17C</span>
-      </div>
-    </div>
-    <div class="col-xs-6 col-m-2 text-center">
-      <span class="day">Sunday</span>
-      <img class="icon-weather" src="images/sun_icon.png" alt="">
-      <div>
-        <span  class="temp-day" id="temp-day-sunday">31C</span>
-        <span class="temp-night" id="temp-night-sunday">17C</span>
-      </div>
-    </div>
-  </div>
+  <div class="row" id="forecast"></div>
 </div>
-
+<script src="js/api.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

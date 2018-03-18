@@ -39,7 +39,7 @@ function setForecast() {
     let icon = item.Day.Icon;
 
     return `
-    <div class="col-xs-6 col-m-2 text-center">
+    <div class="day-wrapper text-center">
       <span class="day">${day}</span>
       <span class="sprite accu-${icon}-s"></span>
       <div>

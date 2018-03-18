@@ -29,13 +29,16 @@
 
 .waves {
   width: 100vw;
-  position: relative;
-  top: -50px;
+  margin-top: -7rem;
 }
 
 //___________________________________________________________________________________________________
-
-
+.space-section {
+  margin-top: 3rem;
+}
+.day-wrapper {
+  flex-basis: 20%;
+}
 .day {
   display: block;
 }

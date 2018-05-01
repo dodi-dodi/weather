@@ -32,18 +32,21 @@ function setForecast() {
   let forecast = getForecast();
 
   let prepForecast = forecast.map(function (item) {
-    let day = moment(item.Date).format('dddd');
-    let tempDayMin = `${item.Temperature.Minimum.Value} &deg;${item.Temperature.Minimum.Unit}`;
-    let tempDayMax = `${item.Temperature.Maximum.Value} &deg;${item.Temperature.Maximum.Unit}`;
-    let tempDay = `${tempDayMin} - ${tempDayMax}`;
+    let day = moment(item.Date).format('dddd').substring(0, 3);
+    let tempDayMin = `${Math.round(item.Temperature.Minimum.Value)} &deg;${item.Temperature.Minimum.Unit}`;
+    let tempDayMax = `${Math.round(item.Temperature.Maximum.Value)} &deg;${item.Temperature.Maximum.Unit}`;
+    // let tempDay = `${tempDayMin} - ${tempDayMax}`;
     let icon = item.Day.Icon;
+    let iconPhrase = item.Day.IconPhrase;
 
     return `
     <div class="day-wrapper text-center">
       <span class="day">${day}</span>
       <span class="sprite accu-${icon}-s"></span>
       <div>
-        <span class="temp-day">${tempDay}</span>
+        <span class="temp-day">${tempDayMax}</span>
+        <span class="temp-night">${tempDayMin}</span>
+        <span class="icon-phrase">${iconPhrase}</span>
       </div>
     </div>
     `

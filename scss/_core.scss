@@ -2,7 +2,7 @@
 .header {
   height: 75vh;
   width: 100%;
-  background-image: url("/images/city2.jpeg");
+  background-image: url("/images/city.jpeg");
   background-size: cover;
   background-position: center center;
   &_content {
@@ -41,8 +41,27 @@
 }
 .day {
   display: block;
+  border: 1px solid #40009B;
+  background: #40009B;
+  border-radius:  2rem;
+  width: 3rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  color: $color_font;
+  font-weight: bolder;
+}
+
+.temp-day {
+  //font-size: 1.3rem;
+  font-weight: 300;
 }
 
 .temp-night {
   color: $color_blue;
+  margin-left: 0.5rem;
+}
+.icon-phrase {
+  display:block;
+  color: $color_gray;
+  margin-top: 0.7rem;
 }

@@ -7,9 +7,6 @@ const
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
 
-  // image optimization
-  image = require('gulp-image'),
-
   // browsersync
   browserSync = require('browser-sync').create(),
   reload = browserSync.reload;

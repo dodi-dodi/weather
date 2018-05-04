@@ -4,7 +4,7 @@
     background: radial-gradient(circle, rgba(18,15,33,1) 0%, rgba(0,0,0,1) 100%);
   }
   .header {
-    height: 65vh;
+    min-height: 65vh;
     &_content {
       &--city {
         font-size: 2rem;
@@ -43,12 +43,12 @@
       display:none;
     }
     .temp-day {
-      color: white;
+      color: $color_temp_day;
       font-weight: bold;
     }
     .temp-night {
       margin-right: 1.5rem;
-      color: #959595;
+      color: $color_gray;
     }
   }
   .space-section {

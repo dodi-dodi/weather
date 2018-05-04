@@ -1,24 +1,29 @@
 //styles for header
 .header {
-  height: 75vh;
+  min-height: 75vh;
   width: 100%;
   background-image: url("/images/city.jpeg");
   background-size: cover;
   background-position: center center;
+  text-shadow: 0 0 3px #000000;
   &_content {
     color: $color_font;
-    //padding-top: 3rem;
     &--city {
+      padding-top: 2rem;
       font-size: 3rem;
     }
     &--temp {
-      font-size: 8.5rem;
+      font-size: 5.5rem;
     }
     &--date {
       font-size: 2rem;
     }
+    &--real-feel {
+      font-size: 1.5rem;
+    }
     &--phrase {
       font-size: 3rem;
+      padding-bottom: 2rem;
     }
   }
   &_icon {
@@ -33,7 +38,6 @@
   margin-top: -7rem;
 }
 
-//___________________________________________________________________________________________________
 .space-section {
   margin-top: 3rem;
 }
@@ -43,8 +47,8 @@
 }
 .day {
   display: block;
-  border: 1px solid #40009B;
-  background: #40009B;
+  border: 1px solid $color_day_border;
+  background: $color_day_border;
   border-radius:  2rem;
   width: 3rem;
   margin: 0 auto 1rem;
@@ -57,11 +61,11 @@
 }
 
 .temp-night {
-  color: $color_blue;
+  color: $color_temp_night;
   margin-left: 0.5rem;
 }
 .icon-phrase {
   display:block;
-  color: $color_gray;
+  color: $color_icon_phrase;
   margin-top: 0.7rem;
 }

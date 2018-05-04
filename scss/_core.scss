@@ -7,17 +7,18 @@
   background-position: center center;
   &_content {
     color: $color_font;
-    padding-top: 3rem;
+    //padding-top: 3rem;
     &--city {
       font-size: 3rem;
     }
     &--temp {
       font-size: 8.5rem;
-      display: inline-block;
     }
     &--date {
       font-size: 2rem;
-      text-align: right;
+    }
+    &--phrase {
+      font-size: 3rem;
     }
   }
   &_icon {
@@ -38,6 +39,7 @@
 }
 .day-wrapper {
   flex-basis: 20%;
+  margin-top: -2.5rem;
 }
 .day {
   display: block;
@@ -45,14 +47,12 @@
   background: #40009B;
   border-radius:  2rem;
   width: 3rem;
-  margin: 0 auto;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
   color: $color_font;
   font-weight: bolder;
 }
 
 .temp-day {
-  //font-size: 1.3rem;
   font-weight: 300;
 }
 

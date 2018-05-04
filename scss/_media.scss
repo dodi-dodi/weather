@@ -1,0 +1,58 @@
+@media (max-width: 576px) {
+  body {
+    background: rgb(18,15,33);
+    background: radial-gradient(circle, rgba(18,15,33,1) 0%, rgba(0,0,0,1) 100%);
+  }
+  .header {
+    height: 65vh;
+    &_content {
+      &--city {
+        font-size: 2rem;
+      }
+      &--temp {
+        font-size: 3rem;
+      }
+      &--date {
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+    &_icon {
+      width: 120px;
+      height: 80px;
+      background-size: 110%;
+    }
+  }
+
+  .waves {
+    display: none;
+  }
+  .day-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    margin-top: 0;
+    justify-content: space-between;
+    padding-top: 0.7rem;
+    .day {
+      margin: 0 0 1rem 1.5rem;
+      border: 0;
+      background: 0;
+    }
+    .icon-phrase {
+      display:none;
+    }
+    .temp-day {
+      color: white;
+      font-weight: bold;
+    }
+    .temp-night {
+      margin-right: 1.5rem;
+      color: #959595;
+    }
+  }
+  .space-section {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+}

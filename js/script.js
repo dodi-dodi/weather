@@ -3,20 +3,34 @@ $(function () {
 
   setCurrentCity('Polska', 'Warszawa');
   setIconToday(current.WeatherIcon);
+  setCurrentPhrase(current.WeatherText);
   setTempToday(
-    current.Temperature.Metric.Value,
+    Math.round(current.Temperature.Metric.Value),
     current.Temperature.Metric.Unit
+  );
+  setTempRealFeel(
+    Math.round(current.RealFeelTemperature.Metric.Value),
+    current.RealFeelTemperature.Metric.Unit,
   );
   setCurrentDate(current.LocalObservationDateTime);
   setForecast();
 });
 
+
 function setIconToday(icon) {
   $('#icon-today').addClass(`accu-${icon}-s`);
 }
 
+function setCurrentPhrase(phrase) {
+  $('#current-phrase').text(phrase);
+}
+
 function setCurrentCity(country, city) {
   $('#current-city').text(`${city}, ${country}`);
+}
+
+function setTempRealFeel(temp, unit) {
+  $('#real-feel').html(`Feels like ${temp} &deg;${unit}`);
 }
 
 function setTempToday(temp, unit) {
@@ -35,7 +49,6 @@ function setForecast() {
     let day = moment(item.Date).format('dddd').substring(0, 3);
     let tempDayMin = `${Math.round(item.Temperature.Minimum.Value)} &deg;${item.Temperature.Minimum.Unit}`;
     let tempDayMax = `${Math.round(item.Temperature.Maximum.Value)} &deg;${item.Temperature.Maximum.Unit}`;
-    // let tempDay = `${tempDayMin} - ${tempDayMax}`;
     let icon = item.Day.Icon;
     let iconPhrase = item.Day.IconPhrase;
 

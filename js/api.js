@@ -7,7 +7,7 @@ const current_data = [
     "IsDayTime": true,
     "Temperature": {
       "Metric": {
-        "Value": 0,
+        "Value": -3.3,
         "Unit": "C",
         "UnitType": 17
       },

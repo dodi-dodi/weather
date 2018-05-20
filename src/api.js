@@ -190,3 +190,5 @@ function getCurrent() {
 function getForecast() {
   return forecast_data.DailyForecasts
 }
+
+module.exports = {getCurrent, getForecast};

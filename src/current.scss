@@ -1,0 +1,50 @@
+@import 'scss/variables';
+
+.current-content {
+  color: $color_font;
+}
+.current-date {
+  font-size: 2rem;
+}
+
+.current-city {
+  padding-top: 2rem;
+  font-size: 3rem;
+}
+
+.current-icon {
+  width: 250px;
+  height: 150px;
+  background-size: 110%;
+}
+
+.current-temp {
+  font-size: 5.5rem;
+}
+
+.current-real-feel {
+  font-size: 1.5rem;
+}
+
+.current-phrase {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 576px) {
+  .current-date {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .current-city {
+    font-size: 2rem;
+  }
+  .current-icon {
+    width: 120px;
+    height: 75px;
+    background-size: 110%;
+  }
+  .current-temp {
+    font-size: 3rem;
+  }
+}

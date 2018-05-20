@@ -1,0 +1,48 @@
+@import 'scss/variables';
+
+:root {
+  font-size: $root_font_size;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.header {
+  min-height: 75vh;
+  width: 100%;
+  background-image: url("/assets/images/city.jpeg");
+  background-size: cover;
+  background-position: center center;
+  text-shadow: 0 0 3px #000000;
+  position: relative;
+}
+
+.waves {
+  width: 100vw;
+  position: absolute;
+  bottom: -0.625rem;
+}
+
+.space-section {
+  margin-top: 3rem;
+}
+
+@media (max-width: 576px) {
+  body {
+    background: rgb(18, 15, 33);
+    background: radial-gradient(circle, rgba(18, 15, 33, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  }
+  .header {
+    min-height: 65vh;
+  }
+  .waves {
+    display: none;
+  }
+}

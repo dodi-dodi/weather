@@ -1,0 +1,66 @@
+@import 'scss/variables';
+
+.forecast {
+  margin-top: 6rem;
+}
+
+.forecast-content {
+  flex-basis: 20%;
+  margin-top: -2.5rem;
+
+  .forecast-day {
+    display: block;
+    border: 1px solid $color_day_border;
+    background: $color_day_border;
+    border-radius: 2rem;
+    width: 3rem;
+    margin: 0 auto 1rem;
+    color: $color_font;
+    font-weight: bolder;
+  }
+
+  .forecast-temp-day {
+    font-weight: 300;
+  }
+
+  .forecast-temp-night {
+    color: $color_temp_night;
+    margin-left: 0.5rem;
+  }
+  .forecast-icon {
+    display: block;
+    color: $color_icon_phrase;
+    margin-top: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .forecast {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  .forecast-content {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    margin-top: 0;
+    justify-content: space-between;
+    padding-top: 0.7rem;
+    .forecast-day {
+      margin: 0 0 1rem 1.5rem;
+      border: 0;
+      background: 0;
+    }
+    .forecast-icon {
+      display: none;
+    }
+    .forecast-temp-day {
+      color: $color_temp_day;
+      font-weight: bold;
+    }
+    .forecast-temp-night {
+      margin-right: 1.5rem;
+      color: $color_gray;
+    }
+  }
+}

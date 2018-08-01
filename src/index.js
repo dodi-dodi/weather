@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import { Forecast } from './forecast'
 import {Current} from "./current";
-
+import {Forecast} from './forecast'
 import './index.scss'
 
 
@@ -26,3 +25,5 @@ class App extends Component {
 
 const root = document.querySelector('#app');
 ReactDOM.render(<App />, root);
+
+

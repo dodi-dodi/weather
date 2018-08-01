@@ -1,66 +1,48 @@
-import React, { Component } from 'react'
+import moment from 'moment'
+import React, {Component} from 'react'
+
+import {getForecast} from './api.js'
 import './forecast.scss'
 
 export class Forecast extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {forecast: getForecast()};
+  }
+
+  getDay(datetime) {
+    return  moment(datetime).format('ddd')
+  }
+
+  forecastDays() {
+    return this.state.forecast.map(val => {
+      return (
+        <div className="forecast-content text-center">
+          <span className="forecast-day">{this.getDay(val.Date)}</span>
+          <div>
+            <span className="forecast-temp-day">
+              {val.Temperature.Maximum.Value}
+              {val.Temperature.Maximum.Unit}
+              </span>
+            <span className="forecast-temp-night">
+              {val.Temperature.Minimum.Value}
+              {val.Temperature.Maximum.Unit}
+              </span>
+            <span className="forecast-icon">
+              <img src={`assets/images/accu-icons/accu-${val.Day.Icon}-s.png`} alt=""/>
+            </span>
+          </div>
+        </div>
+      )
+    });
+  }
+
   render() {
     return (
       <div className="row forecast" id="forecast">
-        <div className="forecast-content text-center">
-          <span className="forecast-day">Mon</span>
-          <span className="sprite accu-${icon}-s"/>
-          <div>
-            <span className="forecast-temp-day">29C</span>
-            <span className="forecast-temp-night">10C</span>
-            <span className="forecast-icon">
-              <img src="assets/images/accu-icons/accu-1-s.png" alt=""/>
-            </span>
-          </div>
-        </div>
-        <div className="forecast-content text-center">
-          <span className="forecast-day">Mon</span>
-          <span className="sprite accu-${icon}-s"/>
-          <div>
-            <span className="forecast-temp-day">29C</span>
-            <span className="forecast-temp-night">10C</span>
-            <span className="forecast-icon">
-              <img src="assets/images/accu-icons/accu-1-s.png" alt=""/>
-            </span>
-          </div>
-        </div>
-        <div className="forecast-content text-center">
-          <span className="forecast-day">Mon</span>
-          <span className="sprite accu-${icon}-s"/>
-          <div>
-            <span className="forecast-temp-day">29C</span>
-            <span className="forecast-temp-night">10C</span>
-            <span className="forecast-icon">
-              <img src="assets/images/accu-icons/accu-1-s.png" alt=""/>
-            </span>
-          </div>
-        </div>
-        <div className="forecast-content text-center">
-          <span className="forecast-day">Mon</span>
-          <span className="sprite accu-${icon}-s"/>
-          <div>
-            <span className="forecast-temp-day">29C</span>
-            <span className="forecast-temp-night">10C</span>
-            <span className="forecast-icon">
-              <img src="assets/images/accu-icons/accu-1-s.png" alt=""/>
-            </span>
-          </div>
-        </div>
-        <div className="forecast-content text-center">
-          <span className="forecast-day">Mon</span>
-          <span className="sprite accu-${icon}-s"/>
-          <div>
-            <span className="forecast-temp-day">29C</span>
-            <span className="forecast-temp-night">10C</span>
-            <span className="forecast-icon">
-              <img src="assets/images/accu-icons/accu-1-s.png" alt=""/>
-            </span>
-          </div>
-        </div>
+        {this.forecastDays()}
       </div>
     )
   }
 }
+

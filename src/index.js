@@ -12,7 +12,7 @@ class App extends Component {
         <header>
           <div className="header">
             <Current/>
-            <img className="waves" src="assets/images/waves.v2.svg" alt=""/>
+            <img className="waves" src="assets/images/waves.v2.png" alt=""/>
           </div>
         </header>
       <div className="container space-section">

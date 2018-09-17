@@ -186,7 +186,7 @@ const forecast_data = {
 };
 
 const API_KEY = 'qWAkpSYSQjcUJ6ClLcoAau1J2cU3IkGI'; // yes I know it shouldn't be here but .. well
-const API_BASE_URL = 'http://dataservice.accuweather.com';
+const API_BASE_URL = 'https://dataservice.accuweather.com';
 const WARSAW = '274663';
 
 export async function getCurrent() {

@@ -15,6 +15,11 @@ let config = {
   devServer: {
     contentBase: path.resolve(__dirname, 'docs'),
     port: 3000,
+    historyApiFallback: {
+      rewrites: [
+        { from: /^(.*)city.jpeg$/, to: '/assets/images/city.jpeg' },
+      ]
+    }
   },
   module: {
     rules: [

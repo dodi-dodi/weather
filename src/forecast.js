@@ -4,28 +4,42 @@ import React, {Component} from 'react'
 import {getForecast} from './api.js'
 import './forecast.scss'
 
+
 export class Forecast extends Component {
   constructor(props) {
     super(props);
-    this.state = {forecast: getForecast()};
+    this.state = {forecast: null};
   }
 
+  componentDidMount() {
+    getForecast().then((data) => {
+      this.setState({forecast: data});
+      if (data.static === true) {
+        this.props.onStaticChange(true);
+      }
+    })
+  }
+
+  // noinspection JSMethodCanBeStatic
   getDay(datetime) {
-    return  moment(datetime).format('ddd')
+    return moment(datetime).format('ddd')
   }
 
   forecastDays() {
-    return this.state.forecast.map(val => {
+    if (this.state.forecast === null) {
+      return <div/>
+    }
+    return this.state.forecast.DailyForecasts.map((val, idx) => {
       return (
-        <div className="forecast-content text-center">
+        <div className="forecast-content text-center" key={`forecast-key-${idx}`}>
           <span className="forecast-day">{this.getDay(val.Date)}</span>
           <div>
             <span className="forecast-temp-day">
-              {val.Temperature.Maximum.Value}
+              {Math.round(val.Temperature.Maximum.Value)}
               {val.Temperature.Maximum.Unit}
               </span>
             <span className="forecast-temp-night">
-              {val.Temperature.Minimum.Value}
+              {Math.round(val.Temperature.Minimum.Value)}
               {val.Temperature.Maximum.Unit}
               </span>
             <span className="forecast-icon">
@@ -45,4 +59,3 @@ export class Forecast extends Component {
     )
   }
 }
-

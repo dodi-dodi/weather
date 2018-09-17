@@ -1,28 +1,30 @@
-const current_data = [
-  {
-    "LocalObservationDateTime": "2018-03-18T15:55:00+01:00",
-    "EpochTime": 1521384900,
-    "WeatherText": "Sunny",
-    "WeatherIcon": 1,
-    "IsDayTime": true,
-    "Temperature": {
-      "Metric": {
-        "Value": -3.3,
-        "Unit": "C",
-        "UnitType": 17
-      },
-    },
-    "RealFeelTemperature": {
-      "Metric": {
-        "Value": -7.7,
-        "Unit": "C",
-        "UnitType": 17
-      },
-    },
-  }
-];
+import axios from 'axios'
 
+
+const current_data = {
+  "static": true,
+  "LocalObservationDateTime": "2018-03-18T15:55:00+01:00",
+  "EpochTime": 1521384900,
+  "WeatherText": "Sunny",
+  "WeatherIcon": 1,
+  "IsDayTime": true,
+  "Temperature": {
+    "Metric": {
+      "Value": -3.3,
+      "Unit": "C",
+      "UnitType": 17
+    },
+  },
+  "RealFeelTemperature": {
+    "Metric": {
+      "Value": -7.7,
+      "Unit": "C",
+      "UnitType": 17
+    },
+  },
+};
 const forecast_data = {
+  "static": true,
   "Headline": {
     "EffectiveDate": "2018-03-20T13:00:00+01:00",
     "EffectiveEpochDate": 1521547200,
@@ -183,12 +185,26 @@ const forecast_data = {
   ]
 };
 
-function getCurrent() {
-  return current_data[0]
+const API_KEY = 'qWAkpSYSQjcUJ6ClLcoAau1J2cU3IkGI'; // yes I know it shouldn't be here but .. well
+const API_BASE_URL = 'http://dataservice.accuweather.com';
+const WARSAW = '274663';
+
+export async function getCurrent() {
+  let uri = `${API_BASE_URL}/currentconditions/v1/${WARSAW}?apikey=${API_KEY}&details=true`;
+  try {
+    let response = await axios.get(uri);
+    return response.data[0]
+  } catch (err) {
+    return current_data
+  }
 }
 
-function getForecast() {
-  return forecast_data.DailyForecasts
+export async function getForecast() {
+  let uri = `${API_BASE_URL}/forecasts/v1/daily/5day/${WARSAW}?apikey=${API_KEY}&details=true&metric=true`;
+  try {
+    let response = await axios.get(uri);
+    return response.data
+  } catch (err) {
+    return forecast_data
+  }
 }
-
-module.exports = {getCurrent, getForecast};

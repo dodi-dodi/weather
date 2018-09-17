@@ -1,7 +1,7 @@
 const path = require('path');
 
 let APP_DIR = path.resolve(__dirname, 'src');
-let BUILD_DIR = path.resolve(__dirname, 'dist');
+let BUILD_DIR = path.resolve(__dirname, 'docs');
 
 let config = {
   entry: path.resolve(APP_DIR, 'index.js'),
@@ -12,9 +12,8 @@ let config = {
   resolve: {
     extensions: ['.js', '.scss']
   },
-  watch: true,
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'docs'),
     port: 3000,
   },
   module: {
